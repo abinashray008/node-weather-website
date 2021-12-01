@@ -46,7 +46,7 @@ app.get('/weather',(req,res)=>{
                  error: 'Address not found'
              })
          }
-         forecast(latitude,longitude,(error,forecastData)=>{
+         forecast(req.query.unit,latitude,longitude,(error,forecastData)=>{
              if(error){
                  return res.send({
                      error:'Unable to find location'
